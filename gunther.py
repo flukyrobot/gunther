@@ -112,7 +112,7 @@ class TestMessage(webapp2.RequestHandler):
                     q = urllib.quote_plus(cmd[len('find me a'):].strip())
                     logging.info("Find request: %s" % q)
 
-                    image_search_url = "https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=%s&rsz=8" % q
+                    image_search_url = "https://ajax.googleapis.com/ajax/services/search/images?safe=active&v=1.0&q=%s&rsz=8" % q
 
                     result = urlfetch.fetch(image_search_url, method=urlfetch.GET)
                     json_data = json.loads(result.content)
