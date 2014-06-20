@@ -36,7 +36,7 @@ class TestMessage(webapp2.RequestHandler):
         # print "form data: %s" % form_data
         # logging.info("Preparing")
 
-        webhook_url = "https://nsdt.slack.com/services/hooks/incoming-webhook?token=HVp85OD7f1gJzZh0xxqIsvDH"
+        webhook_url = "https://nsdt.slack.com/services/hooks/incoming-webhook?token=AxfgsYiyFAJPVMzwJEPtD4T4"
         result = urlfetch.fetch(url=webhook_url,
             payload=form_data,
             method=urlfetch.POST,
