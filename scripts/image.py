@@ -10,7 +10,7 @@ class Image(ScriptBase):
 
 	def respond(self, input="test", cache=[]):
 		logging.info('matched image search: ', input)
-		q = urllib.quote_plus(input[len(self.trigger()):].strip())
+		q = urllib.quote_plus(input.strip())
 		logging.info("Find request: %s" % q)
 
 		image_search_url = "https://ajax.googleapis.com/ajax/services/search/images?safe=active&v=1.0&q=%s&rsz=8" % q
