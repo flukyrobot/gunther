@@ -70,7 +70,7 @@ class GuntherResponder(webapp2.RequestHandler):
                 s = script(gunther)
                 logging.info(s.trigger())
                 if re.search(s.trigger(), cmd, re.IGNORECASE):
-                    s.respond(cmd[len(s.trigger())+1:])       
+                    s.respond(cmd[len(s.trigger()):])       
         
 
 application = webapp2.WSGIApplication([
