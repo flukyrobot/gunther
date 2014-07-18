@@ -9,7 +9,7 @@ import random
 class Image(ScriptBase):
 
 	def respond(self, input="test", cache=[]):
-		logging.info('matched image search')
+		logging.info('matched image search: ', input)
 		q = urllib.quote_plus(input[len(self.trigger()):].strip())
 		logging.info("Find request: %s" % q)
 
