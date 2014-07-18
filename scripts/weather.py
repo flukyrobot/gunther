@@ -20,6 +20,7 @@ class Weather(ScriptBase):
 		# logging.info("weather result: %s" % result.content)
 		json_data = json.loads(result.content)
 		location = json_data["results"][0]["geometry"]["location"]
+		displayName = json_data["results"][0]["formatted_address"]
 		logging.info("location: %s" % location)
 
 		weather_url = "http://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&mode=json" % (str(location["lat"]).split('.')[0], str(location["lng"]).split('.')[0])
@@ -30,7 +31,7 @@ class Weather(ScriptBase):
 
 		logging.info("%s %s"% (weather_desc,weather_temp))
 
-		self.send("It's currently %s and %s" % (weather_desc, weather_temp))
+		self.send("Current weather for %s, is %s and %s" % (displayName, weather_desc, weather_temp))
 
 	def trigger(self):
 		return r"^weather"
